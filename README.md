@@ -3,7 +3,7 @@
 **Shun Aso** — Faculty of Environment and Information Studies, Keio University, Fujisawa, Kanagawa, Japan
 (`shun_aso@keio.jp`)
 
-> [[Paper PDF]]() · [[BibTeX]](#citation)
+> [[Paper PDF]]() · [[BibTeX]](#todo citation)
 
 We study federated fine-tuning of a small LLM for mental health counseling when clients hold data of varying heterogeneity — a realistic scenario where some services draw from general populations (IID) while others serve narrow subpopulations (non-IID). Three research questions drive the study:
 
@@ -217,13 +217,7 @@ uv.lock                     Pinned dependency lockfile
 
 ---
 
-## Citation
+## Citation todo
 
 ```bibtex
-@inproceedings{aso2026mentalhealth,
-  title     = {Mental Health Counseling {LLMs} in Mixed {IID/Non-IID} Federations},
-  author    = {Aso, Shun},
-  booktitle = {},
-  year      = {2026},
-}
 ```
