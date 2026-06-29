@@ -1,0 +1,68 @@
+{
+  "method": "fedavg",
+  "seed": 42,
+  "experiment_name": "fedavg_seed42",
+  "global_adapter": "global_adapter.npz",
+  "clients": {
+    "0": {
+      "type": "iid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "1": {
+      "type": "iid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "2": {
+      "type": "iid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "3": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "4": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "5": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "6": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "7": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "8": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    },
+    "9": {
+      "type": "noniid",
+      "inference": "global",
+      "primary_file": "global_adapter.npz",
+      "local_file": null
+    }
+  }
+}

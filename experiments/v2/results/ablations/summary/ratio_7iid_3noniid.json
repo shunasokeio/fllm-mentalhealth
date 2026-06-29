@@ -1,0 +1,45 @@
+{
+  "setting": "ratio_7iid_3noniid",
+  "seed": 42,
+  "methods": {
+    "fedavg": {
+      "counseling": {
+        "all": 7.1,
+        "iid": 7.084081632653061,
+        "noniid": 7.137142857142858
+      },
+      "personalization": {
+        "all": 5.8839999999999995,
+        "iid": 5.871428571428572,
+        "noniid": 5.913333333333333
+      },
+      "upload_mb": 35.19283200000006
+    },
+    "ha_duallora_half": {
+      "counseling": {
+        "all": 7.119428571428569,
+        "iid": 7.116326530612244,
+        "noniid": 7.126666666666668
+      },
+      "personalization": {
+        "all": 5.912000000000001,
+        "iid": 5.9,
+        "noniid": 5.94
+      },
+      "upload_mb": 35.19283200000006
+    },
+    "selective": {
+      "counseling": {
+        "all": 7.139999999999999,
+        "iid": 7.063673469387754,
+        "noniid": 7.318095238095238
+      },
+      "personalization": {
+        "all": 5.932,
+        "iid": 5.831428571428572,
+        "noniid": 6.166666666666667
+      },
+      "upload_mb": 24.634982400000002
+    }
+  }
+}

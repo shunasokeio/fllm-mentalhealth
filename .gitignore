@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.python-version
+
+# Virtual environment
+.venv/
+
+# IDE
+.claude/
+.cursor/
+
+# Experiment logs & artifacts
+*.log
+FL_*/
+*_loss_curve.jsonl
+*_distribution.png
+*_global_update_ema.npy
+heterogeneity_log.csv
+heterogeneity_labelled_log.csv
+heterogeneity_labelled_log.csv
+run_qwen_newcluster.log
+coverage_experiments.log
+qwen_experiments.log
+qwen_coverage_experiments.log
+smollm_experiments.log
+new_datasets_experiments.log
+continue_training.log
+fed_continuous*.log
+re_eval_run2.log
+watch_and_reeval.log
+*.log.*
+
+# Large data files
+embedded_data/embeddings.npy
+embedded_data/mentalchat16k_embedded/
+embedded_data/clustered_dataset/
+embedded_data/*.npy
+!embedded_data/cluster_labels.npy
+embedded_data/_backup_clustered_dataset.csv
+embedded_data/clustered_dataset_backup_kmeans20_nodimred.csv
+embedded_data/clustered_dataset.csv
+wandb/
+
+# Generated outputs (large)
+generated_output6/
+
+# Trained adapter weights (large — redistribute via HuggingFace Hub)
+experiments/v2/results/**/*.npz
+
+# Results (keep — small and useful)
+# eval_results7/ → tracked
+# results*.txt  → tracked
+
+# Build
+*.egg-info/
+dist/
+build/
+.env

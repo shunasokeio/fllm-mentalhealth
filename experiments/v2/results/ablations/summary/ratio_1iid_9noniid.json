@@ -1,0 +1,75 @@
+{
+  "setting": "ratio_1iid_9noniid",
+  "seed": 42,
+  "methods": {
+    "fedavg": {
+      "counseling": {
+        "all": 7.13859410430839,
+        "iid": 7.119999999999999,
+        "noniid": 7.140918367346938
+      },
+      "personalization": {
+        "all": 5.920634920634921,
+        "iid": 5.86,
+        "noniid": 5.928214285714286
+      },
+      "upload_mb": 35.192832000000045
+    },
+    "ha_duallora_half": {
+      "counseling": {
+        "all": 7.248526077097504,
+        "iid": 6.942857142857142,
+        "noniid": 7.286734693877549
+      },
+      "personalization": {
+        "all": 6.1282539682539685,
+        "iid": 5.74,
+        "noniid": 6.176785714285715
+      },
+      "upload_mb": 35.192832000000045
+    },
+    "selective": {
+      "counseling": {
+        "all": 7.337233560090703,
+        "iid": 7.091428571428571,
+        "noniid": 7.367959183673469
+      },
+      "personalization": {
+        "all": 6.2161904761904765,
+        "iid": 5.92,
+        "noniid": 6.253214285714287
+      },
+      "upload_mb": 3.9103146666666673
+    }
+  },
+  "client_exclusion": {
+    "excluded_clients": [
+      2
+    ],
+    "reason": "0 training examples (alpha=0.01 Dirichlet starvation)",
+    "effective_clients": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "effective_iid": [
+      0
+    ],
+    "effective_noniid": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

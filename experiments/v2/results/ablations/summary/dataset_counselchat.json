@@ -1,0 +1,75 @@
+{
+  "setting": "dataset_counselchat",
+  "seed": 42,
+  "methods": {
+    "fedavg": {
+      "counseling": {
+        "all": 6.005367965367967,
+        "iid": 6.021904761904763,
+        "noniid": 5.997099567099568
+      },
+      "personalization": {
+        "all": 5.272323232323233,
+        "iid": 5.246666666666667,
+        "noniid": 5.285151515151515
+      },
+      "upload_mb": 35.192832000000045
+    },
+    "ha_duallora_half": {
+      "counseling": {
+        "all": 6.015555555555554,
+        "iid": 5.8742857142857146,
+        "noniid": 6.086190476190477
+      },
+      "personalization": {
+        "all": 5.394747474747475,
+        "iid": 5.239999999999999,
+        "noniid": 5.472121212121213
+      },
+      "upload_mb": 35.192832000000045
+    },
+    "selective": {
+      "counseling": {
+        "all": 5.984646464646465,
+        "iid": 5.8238095238095235,
+        "noniid": 6.065064935064935
+      },
+      "personalization": {
+        "all": 5.313737373737374,
+        "iid": 5.153333333333333,
+        "noniid": 5.3939393939393945
+      },
+      "upload_mb": 11.730943999999994
+    }
+  },
+  "client_exclusion": {
+    "excluded_clients": [
+      7
+    ],
+    "reason": "0 training examples (alpha=0.01 Dirichlet starvation)",
+    "effective_clients": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9
+    ],
+    "effective_iid": [
+      0,
+      1,
+      2
+    ],
+    "effective_noniid": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9
+    ]
+  }
+}

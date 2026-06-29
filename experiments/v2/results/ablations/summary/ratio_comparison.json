@@ -1,0 +1,60 @@
+{
+  "seed": 42,
+  "metric": "personalization (metric 8)",
+  "points": [
+    {
+      "point": "iid_heavy_7iid_3noniid",
+      "all": {
+        "fedavg": 5.8839999999999995,
+        "ha_duallora_half": 5.912000000000001,
+        "ha_minus_fedavg": 0.028000000000001357
+      },
+      "iid": {
+        "fedavg": 5.871428571428572,
+        "ha_duallora_half": 5.9,
+        "ha_minus_fedavg": 0.02857142857142847
+      },
+      "noniid": {
+        "fedavg": 5.913333333333333,
+        "ha_duallora_half": 5.94,
+        "ha_minus_fedavg": 0.026666666666667282
+      }
+    },
+    {
+      "point": "mixed_3iid_7noniid_main",
+      "all": {
+        "fedavg": 5.829761904761904,
+        "ha_duallora_half": 6.074142857142857,
+        "ha_minus_fedavg": 0.24438095238095325
+      },
+      "iid": {
+        "fedavg": 5.863333333333333,
+        "ha_duallora_half": 5.970000000000001,
+        "ha_minus_fedavg": 0.10666666666666735
+      },
+      "noniid": {
+        "fedavg": 5.815374149659863,
+        "ha_duallora_half": 6.118775510204081,
+        "ha_minus_fedavg": 0.3034013605442176
+      }
+    },
+    {
+      "point": "noniid_heavy_1iid_9noniid",
+      "all": {
+        "fedavg": 5.920634920634921,
+        "ha_duallora_half": 6.1282539682539685,
+        "ha_minus_fedavg": 0.2076190476190476
+      },
+      "iid": {
+        "fedavg": 5.86,
+        "ha_duallora_half": 5.74,
+        "ha_minus_fedavg": -0.1200000000000001
+      },
+      "noniid": {
+        "fedavg": 5.928214285714286,
+        "ha_duallora_half": 6.176785714285715,
+        "ha_minus_fedavg": 0.2485714285714291
+      }
+    }
+  ]
+}

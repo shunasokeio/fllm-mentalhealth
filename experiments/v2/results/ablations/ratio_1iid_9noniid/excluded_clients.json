@@ -1,0 +1,30 @@
+{
+  "excluded_clients": [
+    2
+  ],
+  "reason": "0 training examples (alpha=0.01 Dirichlet starvation)",
+  "effective_clients": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "effective_iid": [
+    0
+  ],
+  "effective_noniid": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

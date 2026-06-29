@@ -1,0 +1,74 @@
+model:
+  name: Qwen/Qwen2.5-0.5B-Instruct
+  quantization: 4
+  gradient_checkpointing: false
+  use_fast_tokenizer: false
+lora:
+  rank: 16
+  alpha: 8
+  dropout: 0.075
+  target_modules: all-linear
+  bias: none
+lora_local:
+  rank: 16
+  alpha: 8
+  dropout: 0.075
+  target_modules: all-linear
+  bias: none
+lora_fedalt:
+  rank: 16
+  alpha: 8
+  dropout: 0.075
+  target_modules: all-linear
+  bias: none
+  gate_init: -0.847
+  gate_lr_mult: 30.0
+train:
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  optimizer: paged_adamw_8bit
+  lr_max: 2.0e-05
+  lr_min: 2.0e-05
+  local_steps: 100
+  local_epochs: 1
+  max_grad_norm: 0.3
+  weight_decay: 0.0
+  warmup_ratio: 0.0
+  source_max_len: 1024
+  target_max_len: 256
+  train_on_source: false
+  bf16: true
+  local_lr_scale: 0.5
+  personalization_threshold: 0.3
+  local_l2_mu: 0.01
+  local_epoch_fraction: 1.0
+  t_global: 50
+  t_local_base: 50
+  t_local_min: 15
+  t_local_max: 75
+  beta1: 0.3
+  beta2: 0.5
+  beta3: 0.4
+  local_lr_min_factor: 0.5
+  local_first: false
+fl:
+  num_clients: 10
+  num_iid_clients: 7
+  num_noniid_clients: 3
+  alpha_iid: 100.0
+  alpha_noniid: 0.01
+  num_rounds: 10
+  warmup_rounds: 2
+  val_every: 2
+  num_gpus: 1
+  train_fraction: 0.9
+  val_fraction: 0.0
+  test_fraction: 0.1
+  fraction_fit: 1.0
+  seed: 42
+eval:
+  model: gpt-4o-mini
+  max_eval_samples: 50
+  max_new_tokens: 512
+experiment_name: selective
+save_dir: /home/mdx-user01/projects/fllm/experiments/v2/results/ablations/ratio_7iid_3noniid

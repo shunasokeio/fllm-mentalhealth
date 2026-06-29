@@ -1,0 +1,71 @@
+{
+  "setting": "ratio_1iid_9noniid",
+  "method": "fedavg",
+  "seed": 42,
+  "groups": {
+    "all": {
+      "counseling": 7.13859410430839,
+      "personalization": 5.920634920634921
+    },
+    "iid": {
+      "counseling": 7.119999999999999,
+      "personalization": 5.86
+    },
+    "noniid": {
+      "counseling": 7.140918367346938,
+      "personalization": 5.928214285714286
+    }
+  },
+  "efficiency": {
+    "upload_mb": 35.192832000000045,
+    "compute_time_s": 355.31202954214416,
+    "peak_gpu_memory_mb": 16198.204844835069
+  },
+  "per_client": {
+    "0": {
+      "counseling": 7.119999999999999,
+      "personalization": 5.86,
+      "n_samples": 50
+    },
+    "1": {
+      "counseling": 7.340000000000001,
+      "personalization": 6.04,
+      "n_samples": 50
+    },
+    "3": {
+      "counseling": 7.057142857142856,
+      "personalization": 5.86,
+      "n_samples": 50
+    },
+    "4": {
+      "counseling": 7.340000000000001,
+      "personalization": 6.1,
+      "n_samples": 50
+    },
+    "5": {
+      "counseling": 6.988571428571428,
+      "personalization": 5.78,
+      "n_samples": 50
+    },
+    "6": {
+      "counseling": 7.119999999999999,
+      "personalization": 5.88,
+      "n_samples": 50
+    },
+    "7": {
+      "counseling": 7.194285714285714,
+      "personalization": 6.02,
+      "n_samples": 50
+    },
+    "8": {
+      "counseling": 6.795918367346937,
+      "personalization": 5.685714285714286,
+      "n_samples": 35
+    },
+    "9": {
+      "counseling": 7.291428571428571,
+      "personalization": 6.06,
+      "n_samples": 50
+    }
+  }
+}
