@@ -143,7 +143,7 @@ python -m experiments.v2.run_ablation
 
 ### LLM Judge
 
-Responses are scored by **GPT-4o-mini** (temperature 0) using the prompt in [`prompts/llm_judge_mentalchat.md`](prompts/llm_judge_mentalchat.md).
+Responses are scored by **GPT-4o-mini** (temperature 0)
 
 The judge scores 8 dimensions on a 1–10 scale:
 
@@ -161,7 +161,7 @@ The judge scores 8 dimensions on a 1–10 scale:
 
 **Counseling quality** = mean of the 7 counseling dimensions (metrics 1–7). **Personalization** is reported separately (metric 8 uses a distinct rubric).
 
-<details>
+<details: Full Prompt>
 <summary>Full judge system prompt</summary>
 
 ```
