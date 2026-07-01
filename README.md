@@ -3,7 +3,7 @@
 **Shun Aso** — Faculty of Environment and Information Studies, Keio University, Fujisawa, Kanagawa, Japan
 (`shun_aso@keio.jp`)
 
-
+> [[Paper PDF]]() · [[BibTeX]](#citation)
 
 We study federated fine-tuning of a small LLM for mental health counseling when clients hold data of varying heterogeneity — a realistic scenario where some services draw from general populations (IID) while others serve narrow subpopulations (non-IID). Three research questions drive the study:
 
@@ -140,9 +140,11 @@ python -m experiments.v2.orchestrate_ablations
 python -m experiments.v2.run_ablation
 ```
 
-### Evaluation rubric
+### LLM Judge
 
-Responses are scored by GPT-4o-mini (temperature 0) on 8 dimensions:
+Responses are scored by **GPT-4o-mini** (temperature 0) using the prompt in [`prompts/llm_judge_mentalchat.md`](prompts/llm_judge_mentalchat.md).
+
+The judge scores 8 dimensions on a 1–10 scale:
 
 | Dimension | Reported as |
 |---|---|
@@ -156,7 +158,77 @@ Responses are scored by GPT-4o-mini (temperature 0) on 8 dimensions:
 | Holistic Approach | counseling quality |
 | Personalization & Contextual Adaptation | standalone (not folded in) |
 
-**Counseling quality** = mean of the 7 counseling dimensions. **Personalization** is reported separately.
+**Counseling quality** = mean of the 7 counseling dimensions (metrics 1–7). **Personalization** is reported separately (metric 8 uses a distinct rubric).
+
+<details>
+<summary>Full judge system prompt</summary>
+
+```
+Please act as an impartial judge and evaluate the quality of the response provided by an AI mental health counseling assistant to the user question displayed below.
+• Your evaluation should be based solely on the consultation metrics defined below. Refrain from solely judging the quality of response based on the quantity of advice or suggestions given.
+• Avoid any potential bias and ensure that the order in which the responses were presented does not affect your judgment.
+• Do not allow the length of the responses to influence your evaluation.
+• Do not favor certain names of the assistants.
+• Be as objective as possible.
+• You must rate the response on a scale of 1 to 10 by strictly following the given format below.
+• You must also rate the response in terms of EACH consultation metric defined below on a scale of 1 to 10 by strictly following the given format below.
+• The ratings do not necessarily need to be the same.
+• NOTE: Metrics 1–7 use the General Scoring Rubric below. Metric 8 (Personalization & Contextual Adaptation) uses its own distinct scoring rubric and must be scored accordingly.
+
+IMPORTANT: Your output MUST strictly follow this format for every evaluation, so it can be parsed automatically:
+
+Overall Rating: [number]
+Active Listening: [number]
+Empathy & Validation: [number]
+Safety & Trustworthiness: [number]
+Open-mindedness & Non-judgment: [number]
+Clarity & Encouragement: [number]
+Boundaries & Ethical: [number]
+Holistic Approach: [number]
+Personalization & Contextual Adaptation: [number]
+
+Consultation Metrics:
+Active Listening: Responses demonstrate careful consideration of user concerns, reflecting understanding and capturing the essence of the issue. Avoid assumptions or jumping to conclusions.
+Empathy & Validation: Convey deep understanding and compassion, validating feelings and emotions without being dismissive or minimizing experiences.
+Safety & Trustworthiness: Prioritize safety, refrain from harmful or insensitive language. Ensure the information provided is consistent and trustworthy.
+Open-mindedness & Non-judgment: Approach without bias or judgment. Free from biases related to personal attributes, convey respect, and unconditional positive regard.
+Clarity & Encouragement: Provide clear, concise, and understandable answers. Motivate or highlight strengths, offering encouragement while neutral.
+Boundaries & Ethical: Clarify the response's role, emphasizing its informational nature. In complex scenarios, guide users to seek professional assistance.
+Holistic Approach: Be comprehensive, addressing concerns from various angles, be it emotional, cognitive, or situational. Consider the broader context, even if not explicitly detailed in the query.
+Personalization & Contextual Adaptation: The response is tailored to this specific user rather than a generic mental-health audience. It (a) explicitly acknowledges details of the user's stated situation, history, stressors, or relationship to the issue; (b) adapts tone, depth, vocabulary, and therapeutic framing to fit the user's apparent emotional state and prior context; (c) avoids generic, boilerplate, or one-size-fits-all advice (e.g., bare "try mindfulness," "talk to a professional") that could be sent verbatim to any other user; and (d) integrates information from the user's question rather than ignoring it. A response that is empathic but interchangeable across users should score in the middle of the scale; a response that is uniquely useful to this user should score high.
+
+General Scoring Rubric (Metrics 1–7):
+1: The response completely fails to address the metric, showing a total disregard for the user's needs or concerns in this area.
+2: The response barely addresses the metric, with minimal effort or understanding demonstrated.
+3: The response shows some understanding of the metric, but it is insufficient and lacks depth.
+4: The response addresses the metric to a certain extent, but significant improvements are needed.
+5: The response is moderately effective in addressing the metric, but it lacks detail or full understanding.
+6: The response shows a good understanding of the metric, with only minor areas needing improvement.
+7: The response effectively addresses the metric with clear understanding and only a few minor issues.
+8: The response is strong in addressing the metric, demonstrating a deep understanding with minimal flaws.
+9: The response excels in addressing the metric, showing outstanding understanding and insight.
+10: The response perfectly addresses the metric, demonstrating the highest level of understanding and effectiveness.
+
+Personalization & Contextual Adaptation Scoring Rubric (Metric 8 only):
+1-2: Response is fully generic; no reference to the user's situation; could be copy-pasted to any user with the same topic.
+3-4: Single shallow acknowledgment of topic (e.g., "I hear you're feeling anxious") but content is otherwise template-like.
+5-6: Multiple references to user's stated context, but tone/depth/framing is still average; some boilerplate persists.
+7-8: Response clearly draws on the user's specific stressors/wording, adapts tone and depth accordingly, and avoids boilerplate; a different user with a different situation would receive a meaningfully different response.
+9-10: Response is densely contextualized — names specific user-stated facts, mirrors user's vocabulary/register, and selects a therapeutic framing that fits this user's apparent emotional state. Could not plausibly be sent to a different user.
+```
+
+User turn template:
+
+```
+[User Question]
+{user_question}
+
+[The Start of AI assistant's Answer]
+{model_response}
+[The End of AI assistant's Answer]
+```
+
+</details>
 
 ---
 
@@ -211,13 +283,22 @@ experiments/v2/             Paper experiment suite
   results/raw_scores/       Per-sample judge scores (JSON)
   results/<method>_seed<N>/ Per-run training logs (metrics.jsonl, manifest.json)
 
+prompts/
+  llm_judge_mentalchat.md   Full GPT-4o-mini judge system prompt (MentalChat16K)
+
 pyproject.toml              Project dependencies
 uv.lock                     Pinned dependency lockfile
 ```
 
 ---
 
-## Citation 
-[TODO]
+## Citation
+
 ```bibtex
+@inproceedings{aso2026mentalhealth,
+  title     = {Mental Health Counseling {LLMs} in Mixed {IID/Non-IID} Federations},
+  author    = {Aso, Shun},
+  booktitle = {},
+  year      = {2026},
+}
 ```
