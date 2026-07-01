@@ -161,7 +161,6 @@ The judge scores 8 dimensions on a 1–10 scale:
 
 **Counseling quality** = mean of the 7 counseling dimensions (metrics 1–7). **Personalization** is reported separately (metric 8 uses a distinct rubric).
 
-<details: Full Prompt>
 <summary>Full judge system prompt</summary>
 
 ```
