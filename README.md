@@ -22,10 +22,10 @@ All methods fine-tune **Qwen2.5-0.5B** (4-bit, bfloat16) with LoRA rank 16 acros
 |---|---|---|
 | M1 | **FedAvg** | Single global LoRA, standard FedAvg aggregation |
 | M2 | **Local-Only** | Independent per-client LoRA, no aggregation |
-| M3 | **DualLoRA** | Fixed dual-adapter: 1 epoch local then 1 epoch global per round |
-| M4 | **HA-DualLoRA** *(proposed)* | Dual-adapter with per-phase epochs scaled by each client's entropy het-score |
-| M5 | **Selective** | Otsu-binarized het-score: non-IID-like clients skip global aggregation |
-| — | **FFA-LoRA** | Freeze-A LoRA communication-efficiency baseline |
+| M3 | **FFA-LoRA** | Freeze-A LoRA communication-efficiency baseline |
+| M4 | **DualLoRA** | Fixed dual-adapter: 1 epoch local then 1 epoch global per round |
+| M5 | **HA-DualLoRA** *(proposed)* | Dual-adapter with per-phase epochs scaled by each client's entropy het-score |
+| M6 | **Selective** | Otsu-binarized het-score: non-IID-like clients skip global aggregation |
 
 ### Heterogeneity score
 
@@ -47,8 +47,8 @@ M4 (HA-DualLoRA) scales each adapter's training budget continuously by this scor
 Requires Python ≥ 3.11 and CUDA. We use [uv](https://github.com/astral-sh/uv) for dependency management.
 
 ```bash
-git clone <repo-url>
-cd <repo-name>
+git clone https://github.com/shunasokeio/fllm-mentalhealth.git
+cd fllm-mentalhealth
 uv sync --frozen
 ```
 
