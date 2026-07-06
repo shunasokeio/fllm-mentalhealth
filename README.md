@@ -25,7 +25,7 @@ All methods fine-tune **Qwen2.5-0.5B** (4-bit, bfloat16) with LoRA rank 16 acros
 | M3 | **FFA-LoRA** | Freeze-A LoRA communication-efficiency baseline |
 | M4 | **DualLoRA** | Fixed dual-adapter: 1 epoch local then 1 epoch global per round |
 | M5 | **HA-DualLoRA** *(proposed)* | Dual-adapter with per-phase epochs scaled by each client's entropy het-score |
-| M6 | **Selective** | Otsu-binarized het-score: non-IID-like clients skip global aggregation |
+| M6 | **Selective** *(proposed)* | Otsu-binarized het-score: non-IID-like clients skip global aggregation |
 
 ### Heterogeneity score
 
