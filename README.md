@@ -283,9 +283,6 @@ experiments/v2/             Paper experiment suite
   results/raw_scores/       Per-sample judge scores (JSON)
   results/<method>_seed<N>/ Per-run training logs (metrics.jsonl, manifest.json)
 
-prompts/
-  llm_judge_mentalchat.md   Full GPT-4o-mini judge system prompt (MentalChat16K)
-
 pyproject.toml              Project dependencies
 uv.lock                     Pinned dependency lockfile
 ```
